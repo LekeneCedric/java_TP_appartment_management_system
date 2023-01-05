@@ -98,6 +98,15 @@ public class Immeuble implements Iimmeuble {
     @Override
     public void listAppart() {
         this.appartements = new Appartement[0];
-
+        String request = "SELECT * FROM appartement WHERE id_immeuble = ? ";
+        try {
+            PreparedStatement pstmt = con.prepareStatement(request);
+            pstmt.setInt(1,this.id);
+            ResultSet res = pstmt.executeQuery();
+        }
+        catch (Exception e )
+        {
+            System.out.println(e.getMessage());
+        }
     }
 }

@@ -2,8 +2,12 @@ package com.example.model;
 
 public class Directeur extends Personne{
 
-
-    public Directeur(String name, String surname, int age) {
+    static int counter =1;
+    public int id ;
+    public Directeur(String name, String surname, int age)
+    {
         super(name, surname, age);
+        this.id = counter;
+        counter++;
     }
 }
